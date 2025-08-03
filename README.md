@@ -1,6 +1,6 @@
 # 💰 FinTracker
 
-**FinTracker** adalah aplikasi web sederhana untuk mencatat pemasukan, pengeluaran, dan memantau anggaran bulanan secara visual. Cocok untuk pengguna yang ingin mengelola keuangan pribadi secara lokal dan ringan tanpa ketergantungan pada aplikasi pihak ketiga.
+**FinTracker** adalah aplikasi web untuk mencatat pemasukan, pengeluaran, dan memantau anggaran bulanan secara visual. Cocok untuk pengguna yang ingin mengelola keuangan pribadi secara lokal dan ringan tanpa ketergantungan pada aplikasi pihak ketiga.
 
 ---
 
