@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Cashflow</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 FinTracker</h1>
+        <p class="subtitle">Personal Finance & Cashflow Monitoring App</p>
+        
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <h4>Total Income</h4>
+                <p class="amount total-income" id="totalIncome">Rp 0</p>
+            </div>
+            <div class="summary-card">
+                <h4>Total Expense</h4>
+                <p class="amount total-expense" id="totalExpense">Rp 0</p>
+            </div>
+            <div class="summary-card">
+                <h4>Net Amount</h4>
+                <p class="amount net-amount" id="netAmount">Rp 0</p>
+            </div>
+        </div>
+        
+        <!-- Category Reference -->
+        <div class="category-list">
+            <h4>📋 Category Reference</h4>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <button class="btn btn-success" onclick="addNewCategory()">➕ Add Category</button>
+                <button class="btn btn-secondary" onclick="deleteCategory()">🗑️ Delete Category</button>
+            </div>
+            <div class="category-grid">
+                <div class="category-section">
+                    <h5>💰 Income Categories</h5>
+                    <ul id="incomeCategories">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+                <div class="category-section">
+                    <h5>💸 Expense Categories</h5>
+                    <ul id="expenseCategories">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Input Form -->
+        <div class="form-section">
+            <h3>➕ Add Transaction</h3>
+            <div class="form-row">
+                <label>Date:</label>
+                <label>Type:</label>
+                <label>Category:</label>
+                <label>Amount (Rp):</label>
+                <label>Notes:</label>
+            </div>
+            <div class="form-row">
+                <input type="date" id="date" required>
+                <select id="type" required onchange="updateCategories()">
+                    <option value="">Select Type</option>
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                </select>
+                <input type="number" id="amount" min="0" step="100" required>
+                <input type="text" id="notes" placeholder="Notes (opsional)">
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn btn-success" onclick="addTransaction()">Add Transaction</button>
+                <button class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+            </div>
+        </div>
+        
+        <!-- Data Table -->
+        <div class="form-section">
+            <h3>📊 Transaction Data</h3>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <button class="btn" onclick="exportToCSV()">📁 Download CSV</button>
+                <button class="btn btn-secondary" onclick="clearAllData()">🗑️ Clear All Data</button>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Notes</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Monthly Budget Tracker -->
+        <div class="form-section">
+            <h3>📊 Monthly Budget Tracker</h3>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <button class="btn" onclick="openBudgetModal()">⚙️ Set Budget</button>
+                <button class="btn btn-secondary" onclick="resetMonthlyBudget()">🔄 Reset Monthly</button>
+            </div>
+            
+            <div class="budget-tracker">
+                <div class="budget-summary">
+                    <h4>Total Budget: <span id="totalBudget">Rp 1,000,000</span></h4>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="totalProgress"></div>
+                        </div>
+                        <span id="totalProgressText">0% - Rp 0/1M</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Modal -->
+        <div id="budgetModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeBudgetModal()">&times;</span>
+                <h3>💰 Set Monthly Budget</h3>
+                
+                <div class="form-row">
+                    <label for="budgetInput">Total Monthly Budget (Rp):</label>
+                    <input type="number" 
+                        id="budgetInput" 
+                        min="0" 
+                        step="10000" 
+                        placeholder="Enter amount (e.g., 1000000)"
+                        autocomplete="off">
+                </div>
+                
+                <div class="budget-info">
+                    <p style="color: #7f8c8d; font-size: 0.9em; text-align: center; margin: 15px 0;">
+                        This budget will track your total monthly expenses across all categories.
+                    </p>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button class="btn btn-success" onclick="saveBudget()">
+                        💾 Save Budget
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeBudgetModal()">
+                        ❌ Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
