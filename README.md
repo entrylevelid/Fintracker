@@ -1,6 +1,6 @@
 # 💰 FinTracker
 
-**FinTracker** adalah aplikasi web sederhana untuk mencatat pemasukan, pengeluaran, dan memantau anggaran bulanan secara visual. Cocok untuk pengguna yang ingin mengelola keuangan pribadi secara lokal dan ringan tanpa ketergantungan pada aplikasi pihak ketiga.
+**FinTracker** adalah aplikasi web untuk mencatat pemasukan, pengeluaran, dan memantau anggaran bulanan secara visual. Cocok untuk pengguna yang ingin mengelola keuangan pribadi secara lokal dan ringan tanpa ketergantungan pada aplikasi pihak ketiga.
 
 ---
 
@@ -67,23 +67,9 @@ FINTRACKER/
 │   │   └── styles.css
 │   └── js/
 │       └── script.js
-├── backend/
-│   ├── app.py
 ├── index.html
 ├── backend/
 │   ├── app.py
 │   └── database.db
 └── requirements.txt
 ```
-
----
-
-## 📜 Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
-
----
-
-## 🙌 Kontribusi
-
-Pull request, ide, dan masukan sangat disambut!
