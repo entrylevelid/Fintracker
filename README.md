@@ -36,8 +36,8 @@ FinTracker adalah aplikasi web sederhana untuk pencatatan pemasukan dan pengelua
 ### ● AI Support Explanation
 Selama pengembangan, AI digunakan untuk:
 - Merancang struktur proyek dan API endpoint
-- Menulis ulang deskripsi teknis dan dokumentasi (README)
+- Mengenerate program pada prompt pertama
 - Membantu debugging dan validasi fungsi pada JavaScript dan Flask
 - Menyempurnakan UI/UX melalui gaya CSS modern dan progresif
 
-AI tidak digunakan untuk mengambil keputusan keuangan atau menyimpan data pengguna di cloud. Semua data disimpan secara lokal.
+### Link Deployment: https://gentle-tartufo-90e2f8.netlify.app/
